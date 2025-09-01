@@ -1,0 +1,6 @@
+.group-photo {
+  max-width: 100%;   /* makes it responsive */
+  height: auto;
+  border-radius: 8px;  /* slightly rounded corners */
+  margin: 1rem 0;
+}
