@@ -1,1 +1,1 @@
-# KIT-IMB-Modeling-Digitalization.github.io
+# KIT-IMB-Modeling-And-Digitalization.github.io
