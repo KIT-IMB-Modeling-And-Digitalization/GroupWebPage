@@ -6,175 +6,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Our Group — Home</title>
     <meta name="description" content="Research group homepage hosted on GitHub Pages." />
-    <style>
-        :root {
-            --fg: #111;
-            --bg: #fff;
-            --muted: #666;
-            --brand: #2f6feb;
-            --card: #f6f8fa;
-        }
-
-        * {
-            box-sizing: border-box
-        }
-
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            background: var(--bg);
-            color: var(--fg);
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif;
-            line-height: 1.5
-        }
-
-        header {
-            border-bottom: 1px solid #e5e7eb;
-            background: linear-gradient(180deg, #fff, #fafbfc)
-        }
-
-        .container {
-            max-width: 960px;
-            margin: auto;
-            padding: 1rem
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: .75rem
-        }
-
-        .brand .logo {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            background: var(--brand);
-            display: inline-block
-        }
-
-        nav {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-            flex-wrap: wrap
-        }
-
-        nav a {
-            color: var(--fg);
-            text-decoration: none;
-            padding: .25rem .5rem;
-            border-radius: .5rem
-        }
-
-        nav a:hover,
-        nav a:focus {
-            background: var(--card)
-        }
-
-        .hero {
-            padding: 3rem 0
-        }
-
-        .hero h1 {
-            font-size: clamp(1.8rem, 2.5vw+1rem, 3rem);
-            margin: .5rem 0
-        }
-
-        .hero p {
-            color: var(--muted);
-            max-width: 60ch
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem
-        }
-
-        .card {
-            background: var(--card);
-            padding: 1rem;
-            border-radius: 12px;
-            border: 1px solid #e5e7eb
-        }
-
-        footer {
-            margin-top: 3rem;
-            border-top: 1px solid #e5e7eb;
-            color: var(--muted)
-        }
-
-        code {
-            background: #fff;
-            border: 1px solid #e5e7eb;
-            border-radius: 6px;
-            padding: .1rem .3rem
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <header>
-        <div class="container">
-            <div class="brand">
-                <span class="logo" aria-hidden="true"></span>
-                <div>
-                    <strong>KIT IMB MPA</strong><br>
-                    <small>Modeling and Digitalization</small>
-                </div>
-            </div>
-            <nav aria-label="Primary">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="research.html">Research</a>
-                <a href="teaching.html">Teaching</a>
-                <a href="people.html">People</a>
-            </nav>
+<script>
+    fetch("header.html")
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById("header").innerHTML = html;
+        });
+    fetch("footer.html")
+        .then(res => res.text())
+        .then(html => {
+            document.getElementById("footer").innerHTML = html;
+        });
+</script>
 
-        </div>
-    </header>
+
+<body>
+    <div id="header"></div>
 
     <main class="container">
-  <section class="hero">
-    <h1>People</h1>
-    <p>
-      Our group consists of researchers, faculty, and students working
-      together on computational modeling of complex fluid systems.
-    </p>
+        <section class="hero">
+            <h1>People</h1>
+            <p>
+                Our group consists of researchers, faculty, and students working
+                together on computational modeling of complex fluid systems.
+            </p>
 
-    <div class="grid">
-      <div class="card">
-        <h3>Person 1</h3>
-        <p>Role • Research interests placeholder.</p>
-      </div>
-      <div class="card">
-        <h3>Person 2</h3>
-        <p>Role • Research interests placeholder.</p>
-      </div>
-      <div class="card">
-        <h3>Person 3</h3>
-        <p>Role • Research interests placeholder.</p>
-      </div>
-      <div class="card">
-        <h3>Person 4</h3>
-        <p>Role • Research interests placeholder.</p>
-      </div>
-      <div class="card">
-        <h3>Person 5</h3>
-        <p>Role • Research interests placeholder.</p>
-      </div>
-    </div>
-  </section>
+            <div class="grid">
+                <div class="card">
+                    <!-- Personal image -->
+                    <img src="images/ravi.jpg" alt="Ravi A. Patel" class="person-photo">
 
-  <footer class="container">
-    <p>© <span id="y"></span> Our Research Group. Built with GitHub Pages.</p>
-  </footer>
-</main>
+                    <h3>Ravi A. Patel</h3>
+                    <p>Group Leader • Computational Modeling, Fluid Mechanics</p>
+
+                    <!-- Social links -->
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/ravi" target="_blank" rel="noopener" class="linkedin">
+                            <img src="images/icons/linkedin.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Ravi" target="_blank" rel="noopener" class="researchgate">
+                            <img src="images/icons/researchgate.png" alt="ResearchGate">
+                        </a>
+                        <a href="https://github.com/ravi" target="_blank" rel="noopener" class="github">
+                            <img src="images/icons/github.png" alt="GitHub">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/omid.jpg" alt="Omid E. Jahromi" class="person-photo">
+
+                    <h3>Omid E. Jahromi</h3>
+                    <p>Research assistant • CFD.</p>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/omid" target="_blank" rel="noopener" class="linkedin">
+                            <img src="images/icons/linkedin.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Omid" target="_blank" rel="noopener" class="researchgate">
+                            <img src="images/icons/researchgate.png" alt="ResearchGate">
+                        </a>
+                        <a href="https://github.com/omid" target="_blank" rel="noopener" class="github">
+                            <img src="images/icons/github.png" alt="GitHub">
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+
+                    <img src="images/annika.jpg" alt="Annika" class="person-photo">
+                    <h3>Annika</h3>
+                    <p>Role • Research interests placeholder.</p>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/annika" target="_blank" rel="noopener" class="linkedin">
+                            <img src="images/icons/linkedin.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Annika" target="_blank" rel="noopener" class="researchgate">
+                            <img src="images/icons/researchgate.png" alt="ResearchGate">
+                        </a>
+                        <a href="https://github.com/annika" target="_blank" rel="noopener" class="github">
+                            <img src="images/icons/github.png" alt="GitHub">
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+
+                    <img src="images/gereon.jpg" alt="Gereon" class="person-photo">
+                    <h3>Gereon</h3>
+                    <p>Role • Research interests placeholder.</p>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/gereon" target="_blank" rel="noopener" class="linkedin">
+                            <img src="images/icons/linkedin.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Gereon" target="_blank" rel="noopener" class="researchgate">
+                            <img src="images/icons/researchgate.png" alt="ResearchGate">
+                        </a>
+                        <a href="https://github.com/gereon" target="_blank" rel="noopener" class="github">
+                            <img src="images/icons/github.png" alt="GitHub">
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/mayank.jpg" alt="Mayank" class="person-photo">
+                    <h3>Mayank</h3>
+                    <p>Role • Research interests placeholder.</p>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/mayank" target="_blank" rel="noopener" class="linkedin">
+                            <img src="images/icons/linkedin.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Mayank" target="_blank" rel="noopener" class="researchgate">
+                            <img src="images/icons/researchgate.png" alt="ResearchGate">
+                        </a>
+                        <a href="https://github.com/mayank" target="_blank" rel="noopener" class="github">
+                            <img src="images/icons/github.png" alt="GitHub">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
+    </main>
+
+    <div id="footer"></div>
 
     <script>
         document.getElementById('y').textContent = new Date().getFullYear();
